@@ -1,11 +1,10 @@
 # coding: utf8
-from collections import defaultdict
-from operator import attrgetter, itemgetter
 import argparse
 import logging
+from collections import defaultdict
+from operator import attrgetter
 
 import pymorphy2
-
 
 GRAM_CHOICES = ('nomn', 'gent', 'datv', 'accs', 'ablt', 'loct', 'voct', 'gen2', 'acc2', 'loc2', 'sing', 'plur')
 

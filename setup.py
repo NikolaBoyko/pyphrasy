@@ -8,7 +8,6 @@ import unittest
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
 
-
 with io.open(os.path.join(os.path.dirname(__file__), 'README.md'),
              encoding='utf') as f:
     readme = f.read()
@@ -30,7 +29,8 @@ class PyTest(TestCommand):
 
 
 def recursive(root):
-    return ['%s/%s' % (dir, x) for dir, subdirs, files  in os.walk(root) for x in  files]
+    return ['%s/%s' % (dir, x) for dir, subdirs, files in os.walk(root) for x in files]
+
 
 setup(
     # overview
@@ -43,7 +43,7 @@ setup(
     packages=['pyphrasy'],
     provides=['pyphrasy'],
     package_dir={'pyphrasy': '.'},
-    package_data={'pyphrasy': recursive('./static')+recursive('./templates')+['README.md']},
+    package_data={'pyphrasy': recursive('./static') + recursive('./templates') + ['README.md']},
 
     # testing
     cmdclass={'test': PyTest},
